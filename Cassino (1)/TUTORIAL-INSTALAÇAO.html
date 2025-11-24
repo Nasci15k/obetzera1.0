@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guia — Obetzera Casino Brasileiro (Plataforma Completa)</title>
+  <meta name="description" content="Guia de instalação e acesso para a Plataforma Obetzera Casino Brasileira completa." />
+  <style>
+    :root{ --bg:#0c1525; --panel:#101a2d; --accent:#0ff77d; --muted:#a8b6d6; --text:#eaf2ff; --border:#26314a }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:linear-gradient(180deg,#0c1525 0%, #101a2d 100%);color:var(--text)}
+    .wrap{max-width:980px;margin:48px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    h1{margin:6px 0 0;font-size:28px}
+    p{color:var(--muted)}
+    .card{background:linear-gradient(180deg,#101a2d,#0c1525);border:1px solid var(--border);padding:14px;border-radius:12px;margin-top:16px}
+    dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 16px}
+    dt{color:#cfe1ff;font-weight:700}
+    code{background:#07101a;padding:2px 6px;border-radius:6px;font-family:ui-monospace,monospace}
+    .note{background:#0b1220;border-left:4px solid var(--accent);padding:10px;border-radius:8px}
+    .danger{background:#2a0f13;border-left:4px solid #ff6b6b;padding:10px;border-radius:8px;margin-top:12px}
+    a.btn{display:inline-block;padding:8px 12px;border-radius:10px;background:linear-gradient(180deg,#4f86ff,#2b5ef2);color:#07122a;text-decoration:none;font-weight:700}
+    footer{margin-top:22px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>OBETZERA CASINO BRASILEIRO — Plataforma Completa</h1>
+        <p>Guia de acesso, instalação e configuração da plataforma de casino 100% funcional, recomendada para VPS ou servidores dedicados.</p>
+      </div>
+      <div><span class="kbd">Atualizado: 20/09/2025</span></div>
+    </header>
+
+    <section class="card">
+      <h2>🔐 Acesso ao Painel Admin</h2>
+      <dl>
+        <dt>URL Admin</dt>
+        <dd><code>https://seudominio/admin/</code></dd>
+        <dt>Login Admin</dt>
+        <dd><code>obetzera@hotmail.com</code> / <strong>Obetzera123</strong></dd>
+      </dl>
+      <div class="note">No arquivo <code>.env</code> você pode definir a variável <code>FILAMENT_BASE_URL</code> que controla o caminho do admin. O padrão é <code>admin</code>. Também configure <code>TOKEN_DE_2FA</code> para a senha de 2FA.</div>
+    </section>
+
+    <section class="card">
+      <h2>👤 Login da Plataforma</h2>
+      <dl>
+        <dt>E-mail</dt>
+        <dd><strong>obetzera@hotmail.com</strong></dd>
+        <dt>Senha</dt>
+        <dd><strong>Obetzera123</strong></dd>
+        <dt>Senha 2FA</dt>
+        <dd><strong>9192</strong></dd>
+      </dl>
+    </section>
+
+    <section class="card">
+      <h2>📦 Instalação</h2>
+      <ol>
+        <li>Compre um plano de hospedagem Cloud ou preferencialmente VPS/Servidor dedicado (a plataforma é pesada, em Cloud pode ficar lenta se o plano for básico).</li>
+        <li>Na Dashboard, abra o <strong>Gerenciador de Arquivos</strong> e vá até a pasta <code>public_html</code>.</li>
+        <li>Extraia todo o conteúdo do pacote na pasta <code>public_html</code>.</li>
+        <li>Edite o arquivo <code>.env</code>:
+          <ul>
+            <li>Configure <code>APP_URL</code> com o seu domínio.</li>
+            <li>Defina banco de dados (<code>DB_HOST</code>, <code>DB_DATABASE</code>, <code>DB_USERNAME</code>, <code>DB_PASSWORD</code>).</li>
+            <li>Altere <code>FILAMENT_BASE_URL</code> (caminho do admin, ex.: admin).</li>
+            <li>Defina <code>TOKEN_DE_2FA=</code> com sua senha 2FA desejada.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>🔁 Integração Playfiver</h2>
+      <ol>
+        <li>Acesse o painel admin &gt; <strong>API de Jogos</strong>.</li>
+        <li>No site da Playfiver, libere o IP da sua hospedagem (encontrado em Hostinger: Plano de hospedagem &gt; Detalhes do plano &gt; Endereço IP do site).</li>
+        <li>Após liberar, recarregue a carteira Playfiver Clone.</li>
+        <li>Crie uma agente (agent) dentro da Playfiver e copie as credenciais para a plataforma.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>🔌 Gateway de Pagamentos</h2>
+      <p>Configure o gateway de sua preferência. Gere credenciais no painel do gateway e insira no painel admin &gt; Gateways. Teste transações antes de produção.</p>
+    </section>
+
+    <section class="card">
+      <h2>📺 Tutorial em vídeo</h2>
+      <p>Siga nosso canal para um tutorial prático de instalação:</p>
+      <p><a class="btn" href="https://youtu.be/jsZHrVRawvw" target="_blank">Abrir canal</a></p>
+    </section>
+
+    <section class="card">
+      <h2>✅ Checklist final</h2>
+      <ul>
+        <li>Altere todas as senhas padrão.</li>
+        <li>Configure corretamente o arquivo <code>.env</code> (incluindo <code>FILAMENT_BASE_URL</code> e <code>TOKEN_DE_2FA</code>).</li>
+        <li>Liberar IP e recarregar carteira Playfiver.</li>
+        <li>Configurar gateway de pagamentos.</li>
+        <li>Testar logins e operação da plataforma.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Guia de instalação — Obetzera Casino Brasileiro. Utilize com responsabilidade e siga a legislação vigente.</p>
+      <p>&copy; 2025 Obetzera. Todos os direitos reservados.</p>
+    
+    </footer>
+  </div>
+</body>
+</html>
